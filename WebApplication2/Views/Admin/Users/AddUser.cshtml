@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@model WebApplication2.Models.Person
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Create Person</h2>
+
+@using (Html.BeginForm("Create", "Person", FormMethod.Post, new { @class = "needs-validation", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.FullName, new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.FullName, new { @class = "form-control", placeholder = "Full Name", required = "required" })
+        @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Email, new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", type = "email", placeholder = "example@mail.com", required = "required" })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.PasswordHash, new { @class = "form-label" })
+        @Html.PasswordFor(model => model.PasswordHash, new { @class = "form-control", placeholder = "Password", required = "required" })
+        @Html.ValidationMessageFor(model => model.PasswordHash, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.IsActive, new { @class = "form-label" })
+        @Html.CheckBoxFor(model => model.IsActive, new { @class = "form-check-input" })
+        @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.CompanyId, new { @class = "form-label" })
+        @Html.DropDownListFor(model => model.CompanyId, new SelectList(ViewBag.Companies, "Id", "Name"), "Select a Company", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.CompanyId, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+}

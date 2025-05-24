@@ -1,0 +1,37 @@
+﻿@model WebApplication2.Models.Company
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Create Company</h2>
+
+@using (Html.BeginForm("Create", "Company", FormMethod.Post, new { @class = "needs-validation p-4", novalidate = "novalidate" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Name, new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Company Name", required = "required" })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Address, new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Address, new { @class = "form-control", placeholder = "Address" })
+        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Phone, new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", placeholder = "+994..." })
+        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="mb-3">
+        @Html.LabelFor(model => model.Email, new { @class = "form-label" })
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", type = "email", placeholder = "example@mail.com" })
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+}

@@ -1,0 +1,475 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\admin\\domains\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\admin\\domains\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\models\\orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\models\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\controllers\\domaincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\domaincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\models\\domain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\domain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\admin\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\admin\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\contactcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\admin\\insanlar\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\admin\\insanlar\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\admin\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\admin\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\hosting\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\hosting\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\controllers\\hostingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\hostingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\admin\\users\\adduser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\admin\\users\\adduser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\models\\companyhosting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\companyhosting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\admin\\company\\addcompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\admin\\company\\addcompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\admin\\company\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\admin\\company\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\models\\hostingpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\hostingpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|c:\\users\\asus\\source\\repos\\webapplication2\\webapplication2\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B6AD7AE8-88C7-452C-BFCB-BF106127EB50}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\views\\about\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 616,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Hosting\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\Hosting\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Hosting\\Index.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\Hosting\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-14T15:44:58.716Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\Order.cs",
+              "RelativeToolTip": "WebApplication2\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T18:19:21.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Invoice.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\Invoice.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Models\\Invoice.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\Invoice.cs",
+              "RelativeToolTip": "WebApplication2\\Models\\Invoice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T18:18:44.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DomainController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\DomainController.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\DomainController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\DomainController.cs",
+              "RelativeToolTip": "WebApplication2\\Controllers\\DomainController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T18:10:35.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Domains\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\Admin\\Domains\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Domains\\Index.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\Admin\\Domains\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-08T18:05:59.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAE0AAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T19:51:49.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Users\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\Admin\\Users\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Users\\Index.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\Admin\\Users\\Index.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAswBACAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T19:47:51.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD8AAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-14T15:42:06.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "WebApplication2\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAqwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T18:59:01.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderItems.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\OrderItems.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Models\\OrderItems.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\OrderItems.cs",
+              "RelativeToolTip": "WebApplication2\\Models\\OrderItems.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T18:20:01.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Company.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\Company.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Models\\Company.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\Company.cs",
+              "RelativeToolTip": "WebApplication2\\Models\\Company.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAIwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T20:14:36.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Insanlar\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\Admin\\Insanlar\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Insanlar\\Index.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\Admin\\Insanlar\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALsEAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-07T06:20:04.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Domain.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\Domain.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Models\\Domain.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\Domain.cs",
+              "RelativeToolTip": "WebApplication2\\Models\\Domain.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T20:29:47.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "HostingController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\HostingController.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\HostingController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\HostingController.cs",
+              "RelativeToolTip": "WebApplication2\\Controllers\\HostingController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T15:44:17.678Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ContactController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\ContactController.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\ContactController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\ContactController.cs",
+              "RelativeToolTip": "WebApplication2\\Controllers\\ContactController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T15:36:36.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\Admin\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\Admin\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T19:48:16.248Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication2\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T07:03:28.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AddUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Users\\AddUser.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\Admin\\Users\\AddUser.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Users\\AddUser.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\Admin\\Users\\AddUser.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T20:01:38.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Person.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\Person.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Models\\Person.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\Person.cs",
+              "RelativeToolTip": "WebApplication2\\Models\\Person.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T20:29:02.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CompanyHosting.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\CompanyHosting.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Models\\CompanyHosting.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\CompanyHosting.cs",
+              "RelativeToolTip": "WebApplication2\\Models\\CompanyHosting.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwBIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T20:46:54.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AddCompany.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Company\\AddCompany.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\Admin\\Company\\AddCompany.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Company\\AddCompany.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\Admin\\Company\\AddCompany.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T21:19:33.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Company\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\Admin\\Company\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Admin\\Company\\Index.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\Admin\\Company\\Index.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwBMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T21:01:31.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "WebApplication2\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAcwAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T17:55:29.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "HostingPackage.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\HostingPackage.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Models\\HostingPackage.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\HostingPackage.cs",
+              "RelativeToolTip": "WebApplication2\\Models\\HostingPackage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T20:45:53.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "WebApplication2\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "WebApplication2\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T05:38:08.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\About\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\About\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\About\\Index.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\About\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-14T15:51:18.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-06T17:56:58.703Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "WebApplication2\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\WebApplication2\\WebApplication2\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "WebApplication2\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T05:33:48.102Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
