@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication2.Models
 {
@@ -15,5 +16,15 @@ namespace WebApplication2.Models
 
         [DataType(DataType.Currency)]
         public decimal Price { get; set; }
+
+        [StringLength(20)]
+        public string Status { get; set; } = "Active";
+
+        public string? Description { get; set; }
+        // Foreign key
+        public int CompanyId { get; set; }
+        public Company Company { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
     }
 }
