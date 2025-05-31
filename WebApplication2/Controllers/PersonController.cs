@@ -35,14 +35,22 @@ namespace WebApplication2.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Person person)
         {
+            bool emailExists = _context.Persons
+                .Any(p => p.Email.ToLower() == person.Email.ToLower());
+
+            if (emailExists)
+            {
+                ModelState.AddModelError("Email", "This email is already taken.");
+            }
+
             var passwordHasher = new Microsoft.AspNetCore.Identity.PasswordHasher<Person>();
-            person.PasswordHash = passwordHasher.HashPassword(person, person.PasswordHash); 
+            person.PasswordHash = passwordHasher.HashPassword(person, person.PasswordHash);
 
             person.CreatedAt = DateTime.Now;
             person.IsActive = true;
-
             _context.Persons.Add(person);
             _context.SaveChanges();
+
             return RedirectToAction("Users");
         }
 
