@@ -73,20 +73,47 @@
                         </div>
                     </nav>
                     </div>
-                    <div class="col-md-2  d_none">
-                        <ul class="email text_align_right">
-                            <li>
-                                <a href="Javascript:void(0)">
-                                    <i class="fa fa-shopping-bag" aria-hidden="true"> <span>0</span></i>
-                                </a>
-                            </li>
-                            <li>
-                            <a asp-action="Index" asp-controller="Login">
+                <div class="col-md-2  d_none">
+                    <ul class="email text_align_right">
+                        <li>
+                            <a href="Javascript:void(0)">
+                                <i class="fa fa-shopping-bag" aria-hidden="true"> <span>0</span></i>
+                            </a>
+                        </li>
+                        <li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <div class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        @User.Identity.Name
+                                        <br>
+                                        <small>@User.FindFirst("CompanyName")?.Value</small>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Profile</a></li>
+                                        <li><a href="#">Settings</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li>
+                                            <form asp-controller="Login" asp-action="Logout" method="post" style="display:inline;">
+                                                @Html.AntiForgeryToken()
+                                                <button type="submit" class="btn btn-link" style="padding:0; border:none; background:none;">
+                                                    Logout
+                                                </button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            }
+                            else
+                            {
+                                <a asp-action="Index" asp-controller="Login">
                                     Sign In
                                 </a>
-                            </li>
-                        </ul>
-                    </div>
+                            }
+                        </li>
+                    </ul>
+                </div>
                 </div>
             </div>
         </div>
