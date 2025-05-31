@@ -24,12 +24,6 @@ namespace WebApplication2.Controllers
             return View("~/Views/Admin/Users/Index.cshtml");
         }
 
-        [Route("Insanlar")]
-        public IActionResult Insanlar()
-        {
-            return View("~/Views/Admin/Insanlar/Index.cshtml");
-        }
-
         [Route("Users/Add")]
         public IActionResult UsersAdd()
         {
