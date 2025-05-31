@@ -19,6 +19,9 @@ namespace WebApplication2.Models
         public string? Address { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime? UpdatedAt { get; set; } // Nullable to track updates
+
+        public DateTime? DeletedAt { get; set; } // Nullable for soft deletes
 
         // Navigation
         public List<Person> Persons { get; set; } = new();
