@@ -1,5 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    @model List<WebApplication2.Models.Company>
 }
 
 <div id="content-wrapper" class="d-flex flex-column">
@@ -38,27 +39,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                </tr>
-                                <tr>
-                                    <td>Garrett Winters</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>63</td>
-                                    <td>2011/07/25</td>
-                                </tr>
-                                <tr>
-                                    <td>Ashton Cox</td>
-                                    <td>Junior Technical Author</td>
-                                    <td>San Francisco</td>
-                                    <td>66</td>
-                                    <td>2009/01/12</td>
-                                </tr>
+                                @foreach (var company in Model)
+                                {
+                                    <tr>
+                                        <td>@company.Name</td>
+                                        <td>@company.Email</td>
+                                        <td>@company.Address</td>
+                                        <td>@company.Phone</td>
+                                        <td>
+                                            <!-- Example action buttons -->
+                                            <a asp-controller="Admin" asp-action="EditCompany" asp-route-id="@company.Id" class="btn btn-sm btn-primary">Edit</a>
+                                            <form asp-controller="Admin" asp-action="DeleteCompany" asp-route-id="@company.Id" method="post" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this company?');">
+                                                @Html.AntiForgeryToken()
+                                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>
