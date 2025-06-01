@@ -68,8 +68,6 @@ namespace WebApplication2.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
                 try
                 {
                     // Don't update CreatedAt - keep original value
@@ -86,16 +84,15 @@ namespace WebApplication2.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    ////if (!HostingPackageExists(hostingPackage.Id))
-                    ////{
-                    ////    return NotFound();
-                    //}
-                    //else
-                    //{
-                    //    throw;
-                    //}
+                    if (!HostingPackageExists(hostingPackage.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
-            }
 
             ViewBag.Companies = new SelectList(_context.Companies.ToList(), "Id", "Name", hostingPackage.CompanyId);
             return View("~/Views/Admin/HostingPackage/Edit.cshtml", hostingPackage);
@@ -104,6 +101,25 @@ namespace WebApplication2.Controllers
         private bool HostingPackageExists(int id)
         {
             return _context.HostingPackages.Any(e => e.Id == id);
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var hostingPackage = await _context.HostingPackages
+                .Include(h => h.Company)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (hostingPackage == null)
+            {
+                return NotFound();
+            }
+
+            return View("~/Views/Admin/HostingPackage/Details.cshtml", hostingPackage);
         }
     }
 }

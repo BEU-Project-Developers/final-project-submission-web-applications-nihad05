@@ -86,10 +86,10 @@
                                 <div class="form-group">
                                     <label asp-for="Status" class="form-label">Status</label>
                                     <select asp-for="Status" class="form-control">
-                                        <option value="Active">Active</option>
-                                        <option value="Inactive">Inactive</option>
-                                        <option value="Suspended">Suspended</option>
-                                        <option value="Discontinued">Discontinued</option>
+                                        <option value="1">Active</option>
+                                        <option value="2">Inactive</option>
+                                        <option value="3">Suspended</option>
+                                        <option value="4">Discontinued</option>
                                     </select>
                                     <span asp-validation-for="Status" class="text-danger"></span>
                                 </div>
@@ -129,6 +129,7 @@
                                     <a asp-controller="HostingPackage" asp-action="Index" class="btn btn-secondary">
                                         <i class="fas fa-times"></i> Cancel
                                     </a>
+
                                     <a asp-controller="HostingPackage" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-info">
                                         <i class="fas fa-eye"></i> View Details
                                     </a>

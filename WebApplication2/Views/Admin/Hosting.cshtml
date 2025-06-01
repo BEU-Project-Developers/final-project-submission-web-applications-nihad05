@@ -64,7 +64,7 @@
                                         </td>
                                         <td>@hosting.CreatedAt.ToString("yyyy-MM-dd")</td>
                                         <td>
-                                            <a asp-controller="Hosting" asp-action="Details" asp-route-id="@hosting.Id" class="btn btn-sm btn-info">View</a>
+                                            <a asp-controller="HostingPackage" asp-action="Details" asp-route-id="@hosting.Id" class="btn btn-sm btn-info">View</a>
                                             <a asp-controller="HostingPackage" asp-action="Edit" asp-route-id="@hosting.Id" class="btn btn-sm btn-primary">Edit</a>
 
                                             <form asp-controller="Hosting" asp-action="Delete" asp-route-id="@hosting.Id" method="post" style="display:inline;">

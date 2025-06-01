@@ -1,0 +1,256 @@
+﻿@{
+    @model WebApplication2.Models.HostingPackage
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Package Details</h1>
+                <div>
+                    <a asp-controller="HostingPackage" asp-action="Index" class="d-none d-sm-inline-block btn btn-sm btn-secondary shadow-sm">
+                        <i class="fas fa-arrow-left fa-sm text-white-50"></i> Back to List
+                    </a>
+                    <a asp-controller="HostingPackage" asp-action="Edit" asp-route-id="@Model.Id" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                        <i class="fas fa-edit fa-sm text-white-50"></i> Edit Package
+                    </a>
+                </div>
+            </div>
+
+            <!-- Package Details -->
+            <div class="row">
+
+                <!-- Main Package Info -->
+                <div class="col-lg-8">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">
+                                <i class="fas fa-box"></i> Package Information
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Package Name</label>
+                                        <h5 class="text-dark">@Model.Name</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Company</label>
+                                        <h5 class="text-dark">@Model.Company?.Name</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Storage</label>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-hdd text-info me-2"></i>
+                                            <h5 class="text-dark mb-0">@Model.StorageGB GB</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Bandwidth</label>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-wifi text-success me-2"></i>
+                                            <h5 class="text-dark mb-0">@Model.BandwidthGB GB</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted">Price</label>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-dollar-sign text-warning me-2"></i>
+                                            <h5 class="text-dark mb-0">$@Model.Price</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @if (!string.IsNullOrEmpty(Model.Description))
+                            {
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label class="form-label text-muted">Description</label>
+                                            <p class="text-dark">@Model.Description</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status & Meta Info -->
+                <div class="col-lg-4">
+                    <!-- Status Card -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">
+                                <i class="fas fa-info-circle"></i> Status
+                            </h6>
+                        </div>
+                        <div class="card-body text-center">
+                            @{
+                                string statusClass = "";
+                                string statusIcon = "";
+                                string statusText = "";
+
+                                switch (Model.Status)
+                                {
+                                    case 1: // Active
+                                        statusClass = "success";
+                                        statusIcon = "fas fa-check-circle";
+                                        statusText = "Active";
+                                        break;
+                                    case 2: // Inactive
+                                        statusClass = "secondary";
+                                        statusIcon = "fas fa-pause-circle";
+                                        statusText = "Inactive";
+                                        break;
+                                    case 3: // Suspended
+                                        statusClass = "warning";
+                                        statusIcon = "fas fa-exclamation-circle";
+                                        statusText = "Suspended";
+                                        break;
+                                    case 4: // Discontinued
+                                        statusClass = "danger";
+                                        statusIcon = "fas fa-times-circle";
+                                        statusText = "Discontinued";
+                                        break;
+                                    default:
+                                        statusClass = "secondary";
+                                        statusIcon = "fas fa-question-circle";
+                                        statusText = "Unknown";
+                                        break;
+                                }
+                            }
+
+                            <div class="text-@statusClass mb-2">
+                                <i class="@statusIcon fa-3x"></i>
+                            </div>
+                            <h4 class="text-@statusClass">@statusText</h4>
+                        </div>
+                    </div>
+
+                    <!-- Package Meta -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">
+                                <i class="fas fa-calendar"></i> Package Details
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Package ID</label>
+                                <p class="text-dark mb-1">#@Model.Id</p>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Created Date</label>
+                                <p class="text-dark mb-1">@Model.CreatedAt.ToString("dd/MM/yyyy")</p>
+                                <small class="text-muted">@Model.CreatedAt.ToString("HH:mm")</small>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Expiry Date</label>
+                                <p class="text-dark mb-1" id="expiryDate">Loading...</p>
+                                <small id="daysRemaining" class="text-muted">Calculating...</small>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-muted">Time Remaining</label>
+                                <div id="countdownClock" class="text-center p-3 bg-light rounded">
+                                    <div class="row text-center">
+                                        <div class="col-3">
+                                            <div class="bg-primary text-white rounded p-2">
+                                                <div class="h4 mb-0" id="days">--</div>
+                                                <small>Days</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="bg-success text-white rounded p-2">
+                                                <div class="h4 mb-0" id="hours">--</div>
+                                                <small>Hours</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="bg-warning text-white rounded p-2">
+                                                <div class="h4 mb-0" id="minutes">--</div>
+                                                <small>Min</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="bg-danger text-white rounded p-2">
+                                                <div class="h4 mb-0" id="seconds">--</div>
+                                                <small>Sec</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">
+                                <i class="fas fa-tools"></i> Quick Actions
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2">
+                                <a asp-controller="HostingPackage" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">
+                                    <i class="fas fa-edit"></i> Edit Package
+                                </a>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                    <i class="fas fa-trash"></i> Delete Package
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete the hosting package "<strong>@Model.Name</strong>"?</p>
+                <p class="text-danger"><small><i class="fas fa-exclamation-triangle"></i> This action cannot be undone.</small></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <form asp-controller="HostingPackage" asp-action="Delete" asp-route-id="@Model.Id" method="post" class="d-inline">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-trash"></i> Delete Package
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
