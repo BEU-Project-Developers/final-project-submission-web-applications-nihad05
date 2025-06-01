@@ -1,12 +1,234 @@
 ﻿@{
     ViewData["Title"] = "Domain Page";
 }
+
+<style>
+    .domain-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .domain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+    .domain-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    .domain-name {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #333;
+        word-break: break-all;
+    }
+
+    .domain-status {
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .status-active {
+        background: #e8f5e8;
+        color: #2d7d2d;
+    }
+
+    .status-inactive {
+        background: #fee;
+        color: #d63384;
+    }
+
+    .domain-info {
+        display: grid;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+    }
+
+    .info-label {
+        color: #666;
+        font-weight: 500;
+    }
+
+    .info-value {
+        color: #333;
+        font-weight: 600;
+    }
+
+    .price-highlight {
+        color: #667eea;
+        font-size: 1.1rem;
+    }
+
+    .domain-actions {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .action-btn {
+        flex: 1;
+        padding: 0.6rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .btn-primary {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+    }
+
+    .btn-secondary {
+        background: #f8f9fa;
+        color: #333;
+        border: 1px solid #e1e8ed;
+    }
+
+    .action-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .searchbar {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .search_input {
+        width: 100%;
+        padding: 1rem 4rem 1rem 1.5rem;
+        border: 2px solid #e1e8ed;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        outline: none;
+        transition: all 0.3s ease;
+        background: white;
+    }
+
+        .search_input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+    .search_icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        border: none;
+        border-radius: 50%;
+        padding: 0.8rem;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+    }
+
+        .search_icon:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+    .domains-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        color: white;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .add-domain-btn {
+        background: linear-gradient(45deg, #00f2fe, #4facfe);
+        color: white;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+        .add-domain-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+
+    .no-results {
+        text-align: center;
+        padding: 3rem;
+        color: white;
+        font-size: 1.2rem;
+        grid-column: 1 / -1;
+    }
+
+    .text-danger {
+        color: #d63384 !important;
+    }
+
+    .loading {
+        text-align: center;
+        padding: 3rem;
+        color: white;
+        font-size: 1.2rem;
+        grid-column: 1 / -1;
+    }
+</style>
+
 <div class="domain">
     <div class="container">
         <div class="row" style="margin-top: 100px;">
             <div class="col-md-12">
                 <div class="titlepage text_align_center">
-                    <h2>all starts with  <span class="blue_light">a domain</span></h2>
+                    <h2>all starts with <span class="blue_light">a domain</span></h2>
                 </div>
             </div>
         </div>
@@ -14,13 +236,28 @@
             <div class="col-md-10 offset-md-1">
                 <div class="form">
                     <div class="searchbar">
-                        <input class="search_input" type="text" name="" placeholder="Search Domain">
-                        <a href="#" class="search_icon">
+                        <input class="search_input" type="text" id="searchInput" placeholder="Search domains by name, company, or status..." onkeyup="searchDomains()">
+                        <a href="#" class="search_icon" onclick="searchDomains()">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-12">
+                <div class="section-header">
+                    <h3 class="section-title">Your Domains</h3>
+                    <a href="#" class="add-domain-btn" onclick="addNewDomain()">
+                        <i class="fa fa-plus"></i>
+                        Add Domain
+                    </a>
+                </div>
+
+                <div class="domains-grid" id="domainsGrid">
+                    <div class="loading">Loading domains...</div>
+                </div>
+            </div>
+
             <div class="col-md-10 offset-md-1">
                 <div class="domain_bg">
                     <div class="row">
@@ -33,34 +270,188 @@
                             <div class="domain-price_main ">
                                 <div class="domain-price">
                                     <span>com.</span>
-                                    <strong>$22.999</strong>
+                                    <strong>$12.99</strong>
                                 </div>
                                 <div class="domain-price">
-                                    <span>com.</span>
-                                    <strong>$22.999</strong>
+                                    <span>net.</span>
+                                    <strong>$14.99</strong>
                                 </div>
                                 <div class="domain-price">
-                                    <span>com.</span>
-                                    <strong>$22.999</strong>
+                                    <span>org.</span>
+                                    <strong>$13.99</strong>
                                 </div>
                                 <div class="domain-price">
-                                    <span>com.</span>
-                                    <strong>$22.999</strong>
+                                    <span>info.</span>
+                                    <strong>$18.99</strong>
                                 </div>
                                 <div class="domain-price">
-                                    <span>com.</span>
-                                    <strong>$22.999</strong>
+                                    <span>biz.</span>
+                                    <strong>$16.99</strong>
                                 </div>
                                 <div class="domain-price">
-                                    <span>com.</span>
-                                    <strong>$22.999</strong>
+                                    <span>co.</span>
+                                    <strong>$24.99</strong>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a class="read_more" href="domain.html">See More</a>
+                    <a class="read_more" href="#">See More</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    let domains = [];
+    let filteredDomains = [];
+
+    // Function to load domains from your API
+    async function loadDomains() {
+        try {
+            const response = await fetch('/Domain/api/recent');
+            if (response.ok) {
+                domains = await response.json();
+                filteredDomains = [...domains];
+                renderDomains();
+            } else {
+                console.error('Failed to load domains');
+                showError('Failed to load domains from server');
+            }
+        } catch (error) {
+            console.error('Error loading domains:', error);
+            showError('Error connecting to server');
+        }
+    }
+
+    function showError(message) {
+        const grid = document.getElementById('domainsGrid');
+        grid.innerHTML = `<div class="no-results">Error: ${message}</div>`;
+    }
+
+    function formatDate(dateString) {
+        return new Date(dateString).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+    }
+
+    function getDaysUntilExpiry(expiryDate) {
+        const today = new Date();
+        const expiry = new Date(expiryDate);
+        const diffTime = expiry - today;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        return diffDays;
+    }
+
+    function renderDomains() {
+        const grid = document.getElementById('domainsGrid');
+
+        if (filteredDomains.length === 0) {
+            grid.innerHTML = '<div class="no-results">No domains found matching your search.</div>';
+            return;
+        }
+
+        // Sort by purchase date (most recent first)
+        const sortedDomains = [...filteredDomains].sort((a, b) =>
+            new Date(b.purchaseDate) - new Date(a.purchaseDate)
+        );
+
+        grid.innerHTML = sortedDomains.map(domain => {
+            const daysUntilExpiry = getDaysUntilExpiry(domain.expiryDate);
+            const isExpiringSoon = daysUntilExpiry <= 30 && daysUntilExpiry > 0;
+            const isExpired = daysUntilExpiry <= 0;
+            const companyName = domain.company ? domain.company.name : 'No Company';
+
+            return `
+                    <div class="domain-card">
+                        <div class="domain-header">
+                            <div class="domain-name">${domain.domainName}</div>
+                            <div class="domain-status ${domain.isActive ? 'status-active' : 'status-inactive'}">
+                                ${domain.isActive ? 'Active' : 'Inactive'}
+                            </div>
+                        </div>
+                        <div class="domain-info">
+                            <div class="info-row">
+                                <span class="info-label">Company:</span>
+                                <span class="info-value">${companyName}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Price:</span>
+                                <span class="info-value price-highlight">$${domain.price}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Purchased:</span>
+                                <span class="info-value">${formatDate(domain.purchaseDate)}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">Expires:</span>
+                                <span class="info-value ${isExpiringSoon || isExpired ? 'text-danger' : ''}">${formatDate(domain.expiryDate)}</span>
+                            </div>
+                            ${isExpiringSoon || isExpired ? `
+                                <div class="info-row">
+                                    <span class="info-label">Status:</span>
+                                    <span class="info-value text-danger">
+                                        ${isExpired ? 'EXPIRED' : `Expires in ${daysUntilExpiry} days`}
+                                    </span>
+                                </div>
+                            ` : ''}
+                        </div>
+                        <div class="domain-actions">
+                            <button class="action-btn btn-primary" onclick="editDomain(${domain.id})">
+                                <i class="fa fa-edit"></i> Edit
+                            </button>
+                            <button class="action-btn btn-secondary" onclick="viewDetails(${domain.id})">
+                                <i class="fa fa-eye"></i> View
+                            </button>
+                        </div>
+                    </div>
+                `;
+        }).join('');
+    }
+
+    function searchDomains() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+
+        if (searchTerm === '') {
+            filteredDomains = [...domains];
+        } else {
+            filteredDomains = domains.filter(domain => {
+                const companyName = domain.company ? domain.company.name.toLowerCase() : '';
+                return domain.domainName.toLowerCase().includes(searchTerm) ||
+                    companyName.includes(searchTerm) ||
+                    (domain.isActive ? 'active' : 'inactive').includes(searchTerm);
+            });
+        }
+
+        renderDomains();
+    }
+
+    function addNewDomain() {
+        // Redirect to add domain page
+        window.location.href = '/Domain/Create';
+    }
+
+    function editDomain(id) {
+        // Redirect to edit domain page
+        window.location.href = `/Domain/Edit/${id}`;
+    }
+
+    function viewDetails(id) {
+        // Redirect to domain details page
+        window.location.href = `/Domain/Details/${id}`;
+    }
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function () {
+        loadDomains();
+    });
+
+    // Add Enter key support for search
+    document.getElementById('searchInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            searchDomains();
+        }
+    });
+</script>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebApplication2.Models;
 
@@ -95,25 +96,29 @@ namespace WebApplication2.Controllers
             return View("~/Views/Admin/Domains/Create.cshtml", domain);
         }
 
-        // GET: Admin/Domains/Edit/5
         [Route("Edit/{id?}")]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            //if (id == null)
+            //{
+            //    return NotFound();
+            //}
 
-            var domain = await _context.Domains.FindAsync(id);
-            if (domain == null)
-            {
-                return NotFound();
-            }
+            //var domain = await _context.Domains.FindAsync(id);
+            //if (domain == null)
+            //{
+            //    return NotFound();
+            //}
 
-            ViewBag.Companies = await _context.Companies
-                .OrderBy(c => c.Name)
-                .ToListAsync();
-            return View("~/Views/Admin/Domains/Edit.cshtml", domain);
+            //// Add defensive programming and async call
+            //var companies = await _context.Companies.ToListAsync();
+            //if (companies == null)
+            //{
+            //    companies = new List<Company>();
+            //}
+
+            //ViewBag.Companies = new SelectList(companies, "Id", "Name", domain.CompanyId);
+            return View("~/Views/Admin/Domains/Edit.cshtml");
         }
 
         // POST: Admin/Domains/Edit/5
