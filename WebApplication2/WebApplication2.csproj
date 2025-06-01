@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Admin\HostingPackage\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Admin\HostingPackage\Index.cshtml" />
     <None Include="wwwroot\img\logo.jpg" />
   </ItemGroup>
 

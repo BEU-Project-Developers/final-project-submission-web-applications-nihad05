@@ -1,0 +1,129 @@
+﻿@{
+    @model WebApplication2.Models.HostingPackage
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Create Hosting Package</h1>
+                <a asp-controller="HostingPackage" asp-action="Index" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                    <i class="fas fa-arrow-left fa-sm text-white-50"></i> Back to List
+                </a>
+            </div>
+
+            <!-- Create Form -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Hosting Package Details</h6>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        @Html.AntiForgeryToken()
+
+                        <div class="row">
+                            <!-- Package Name -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Name" class="form-label">Package Name <span class="text-danger">*</span></label>
+                                    <input asp-for="Name" class="form-control" placeholder="Enter package name" />
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Company -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="CompanyId" class="form-label">Company <span class="text-danger">*</span></label>
+                                    <select asp-for="CompanyId" class="form-control" asp-items="ViewBag.Companies">
+                                        <option value="">-- Select Company --</option>
+                                    </select>
+                                    <span asp-validation-for="CompanyId" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Storage -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="StorageGB" class="form-label">Storage (GB)</label>
+                                    <input asp-for="StorageGB" type="number" class="form-control" placeholder="Enter storage in GB" min="1" />
+                                    <span asp-validation-for="StorageGB" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Bandwidth -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="BandwidthGB" class="form-label">Bandwidth (GB)</label>
+                                    <input asp-for="BandwidthGB" type="number" class="form-control" placeholder="Enter bandwidth in GB" min="1" />
+                                    <span asp-validation-for="BandwidthGB" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Price -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Price" class="form-label">Price ($)</label>
+                                    <input asp-for="Price" type="number" step="0.01" class="form-control" placeholder="Enter price" min="0" />
+                                    <span asp-validation-for="Price" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <!-- Status -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Status" class="form-label">Status</label>
+                                    <select asp-for="Status" class="form-control">
+                                        <option value="Active" selected>Active</option>
+                                        <option value="Inactive">Inactive</option>
+                                        <option value="Suspended">Suspended</option>
+                                        <option value="Discontinued">Discontinued</option>
+                                    </select>
+                                    <span asp-validation-for="Status" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label asp-for="Description" class="form-label">Description</label>
+                                    <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter package description (optional)"></textarea>
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fas fa-save"></i> Create Package
+                                    </button>
+                                    <a asp-controller="HostingPackage" asp-action="Index" class="btn btn-secondary">
+                                        <i class="fas fa-times"></i> Cancel
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+</div>

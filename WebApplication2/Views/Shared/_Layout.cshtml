@@ -25,6 +25,219 @@
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <style>
+        .user-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .user-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 8px 15px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            justify-content: space-between;
+        }
+
+            .user-toggle:hover {
+                background: rgba(255, 255, 255, 0.15);
+                color: white;
+                text-decoration: none;
+                transform: translateY(-1px);
+            }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+        }
+
+        .user-name {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.2;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 160px;
+        }
+
+        .dropdown-arrow {
+            font-size: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .user-dropdown.show .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .user-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            margin-top: 5px;
+        }
+
+        .user-dropdown.show .user-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px 16px;
+            color: black !important;
+            text-decoration: none;
+            border: none;
+            background: #f8f9fa;
+            width: 100%;
+            text-align: left;
+            font-size: 14px;
+            transition: background 0.2s ease;
+            cursor: pointer;
+        }
+
+            .dropdown-item:hover {
+                background: #f8f9fa;
+                color: black;
+                text-decoration: none;
+            }
+
+            .dropdown-item:first-child {
+                border-radius: 8px 8px 0 0;
+            }
+
+            .dropdown-item:last-child {
+                border-radius: 0 0 8px 8px;
+            }
+
+        .dropdown-divider {
+            height: 1px;
+            background: #e9ecef;
+            margin: 0;
+        }
+
+        .logout-btn {
+            color: #dc3545 !important;
+            font-weight: 500;
+        }
+
+            .logout-btn:hover {
+                background: #f8f9fa;
+                color: #dc3545 !important;
+            }
+
+        .shopping-bag {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            margin-right: 15px;
+        }
+
+            .shopping-bag:hover {
+                background: rgba(255, 255, 255, 0.2);
+                color: white;
+                text-decoration: none;
+            }
+
+            .shopping-bag span {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                background: #ff4757;
+                color: white;
+                border-radius: 50%;
+                width: 18px;
+                height: 18px;
+                font-size: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+            }
+
+        .sign-in-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            padding: 10px 10px;
+            color: white !important;
+            text-decoration: none !important;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+            .sign-in-btn:hover {
+                background: rgba(255, 255, 255, 0.2);
+                color: white !important;
+                text-decoration: none !important;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                border-color: rgba(255, 255, 255, 0.4);
+            }
+
+            .sign-in-btn:focus {
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+                color: white !important;
+                text-decoration: none !important;
+            }
+
+            .sign-in-btn:active {
+                transform: translateY(0);
+                background: rgba(255, 255, 255, 0.15);
+            }
+
+        .email {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            .email li {
+                margin: 0;
+            }
+    </style>
+
     </head>
     <!-- body -->
     <body class="main-layout">
@@ -73,47 +286,54 @@
                         </div>
                     </nav>
                     </div>
-                <div class="col-md-2  d_none">
+                <div class="col-md-2 d_none">
                     <ul class="email text_align_right">
                         <li>
-                            <a href="Javascript:void(0)">
-                                <i class="fa fa-shopping-bag" aria-hidden="true"> <span>0</span></i>
+                            <a href="Javascript:void(0)" class="shopping-bag">
+                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                <span>0</span>
                             </a>
                         </li>
                         <li>
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <div class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        @User.Identity.Name
-                                        <br>
-                                        <small>@User.FindFirst("CompanyName")?.Value</small>
-                                        <span class="caret"></span>
+                                <div class="user-dropdown" id="userDropdown">
+                                    <a href="#" class="user-toggle" onclick="toggleDropdown(event)">
+                                        <div class="user-info">
+                                            <p class="user-name">@User.Identity.Name - @User.FindFirst("CompanyName")?.Value</p>
+                                        </div>
+                                        <i class="fa fa-chevron-down dropdown-arrow"></i>
                                     </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Profile</a></li>
-                                        <li><a href="#">Settings</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li>
-                                            <form asp-controller="Login" asp-action="Logout" method="post" style="display:inline;">
-                                                @Html.AntiForgeryToken()
-                                                <button type="submit" class="btn btn-link" style="padding:0; border:none; background:none;">
-                                                    Logout
-                                                </button>
-                                            </form>
-                                        </li>
-                                    </ul>
+                                    <div class="user-dropdown-menu">
+                                        <a href="#" class="dropdown-item">
+                                            <i class="fa fa-user" style="margin-right: 8px;"></i>
+                                            Profile
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="fa fa-cog" style="margin-right: 8px;"></i>
+                                            Settings
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <form asp-controller="Login" asp-action="Logout" method="post" style="display:inline; width: 100%;">
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="dropdown-item logout-btn">
+                                                <i class="fa fa-sign-out" style="margin-right: 8px;"></i>
+                                                Logout
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                             }
                             else
                             {
-                                <a asp-action="Index" asp-controller="Login">
+                                <a asp-action="Index" asp-controller="Login" class="sign-in-btn">
                                     Sign In
                                 </a>
                             }
                         </li>
                     </ul>
                 </div>
+
                 </div>
             </div>
         </div>
@@ -190,4 +410,29 @@
         <!-- sidebar -->
         <script src="js/custom.js"></script>
     </body>
+<script>
+    function toggleDropdown(event) {
+        event.preventDefault();
+        const dropdown = document.getElementById('userDropdown');
+        dropdown.classList.toggle('show');
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (event) {
+        const dropdown = document.getElementById('userDropdown');
+        if (dropdown && !dropdown.contains(event.target)) {
+            dropdown.classList.remove('show');
+        }
+    });
+
+    // Prevent dropdown from closing when clicking inside
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdownMenu = document.querySelector('.user-dropdown-menu');
+        if (dropdownMenu) {
+            dropdownMenu.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+        }
+    });
+</script>
     </html>
