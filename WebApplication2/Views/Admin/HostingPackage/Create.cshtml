@@ -84,10 +84,10 @@
                                 <div class="form-group">
                                     <label asp-for="Status" class="form-label">Status</label>
                                     <select asp-for="Status" class="form-control">
-                                        <option value="Active" selected>Active</option>
-                                        <option value="Inactive">Inactive</option>
-                                        <option value="Suspended">Suspended</option>
-                                        <option value="Discontinued">Discontinued</option>
+                                        <option value="1" selected>Active</option>
+                                        <option value="0">Inactive</option>
+                                        <option value="2">Suspended</option>
+                                        <option value="3">Discontinued</option>
                                     </select>
                                     <span asp-validation-for="Status" class="text-danger"></span>
                                 </div>

@@ -5,9 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using WebApplication2.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization; // Add this using
 
 namespace WebApplication2.Controllers
 {
+    [AllowAnonymous] // Add this attribute
     public class LoginController : Controller
     {
         private readonly AppDbContext _context;
@@ -20,6 +22,11 @@ namespace WebApplication2.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            // If already authenticated, redirect to home
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
@@ -29,20 +36,17 @@ namespace WebApplication2.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Find user by email
                 var user = _context.Persons
-                    .Include(p => p.Company) // Include company data
+                    .Include(p => p.Company)
                     .FirstOrDefault(p => p.Email == model.Email && p.IsActive);
 
                 if (user != null)
                 {
-                    // Use Identity PasswordHasher for verification
                     var passwordHasher = new PasswordHasher<Person>();
                     var result = passwordHasher.VerifyHashedPassword(user, user.PasswordHash, model.Password);
 
                     if (result == PasswordVerificationResult.Success)
                     {
-                        // Create claims
                         var claims = new List<Claim>
                         {
                             new Claim(ClaimTypes.Name, user.FullName),
@@ -67,10 +71,8 @@ namespace WebApplication2.Controllers
                         return RedirectToAction("Index", "Home");
                     }
                 }
-
                 ModelState.AddModelError("", "Invalid email or password.");
             }
-
             return View(model);
         }
 
@@ -79,7 +81,7 @@ namespace WebApplication2.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Login"); // Changed from Home to Login
         }
     }
 }
