@@ -11,6 +11,8 @@ namespace WebApplication2.Models
         [Required]
         public string DomainName { get; set; }
 
+        public int Price { get; set; }
+
         public DateTime PurchaseDate { get; set; }
 
         public DateTime ExpiryDate { get; set; }

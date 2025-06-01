@@ -13,13 +13,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("MySqlConnection"))
     ));
 
-// Add Authentication
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
         options.LoginPath = "/Login";
         options.LogoutPath = "/Login/Logout";
-        options.ExpireTimeSpan = TimeSpan.FromHours(1);
+        options.AccessDeniedPath = "/Login";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
         options.SlidingExpiration = true;
     });
 
@@ -35,9 +35,10 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
+// CORRECT ORDER: Authentication BEFORE Authorization
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
