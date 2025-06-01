@@ -1,0 +1,264 @@
+﻿@{
+@model WebApplication2.Models.Domain
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Add New Domain";
+}
+
+<div id="content-wrapper" class="d-flex flex-column">
+    <!-- Main Content -->
+    <div id="content">
+        <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Add New Domain</h1>
+                <a asp-action="Index" class="d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm">
+                    <i class="fas fa-arrow-left fa-sm text-primary-50"></i> Back to Domains
+                </a>
+            </div>
+
+            <!-- Alert Messages -->
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["ErrorMessage"]
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
+
+            <!-- Create Domain Form -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Domain Information</h6>
+                        </div>
+                        <div class="card-body">
+                            <form asp-action="Create" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label asp-for="DomainName" class="control-label font-weight-bold">Domain Name <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-globe"></i></span>
+                                                </div>
+                                                <input asp-for="DomainName" class="form-control" placeholder="example.com" />
+                                            </div>
+                                            <span asp-validation-for="DomainName" class="text-danger"></span>
+                                            <small class="form-text text-muted">Enter the full domain name (e.g., example.com, subdomain.example.org)</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label asp-for="CompanyId" class="control-label font-weight-bold">Company <span class="text-danger">*</span></label>
+                                            <select asp-for="CompanyId" class="form-control" asp-items="@(new SelectList(ViewBag.Companies, "Id", "Name"))">
+                                                <option value="">-- Select Company --</option>
+                                            </select>
+                                            <span asp-validation-for="CompanyId" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="PurchaseDate" class="control-label font-weight-bold">Purchase Date <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                                </div>
+                                                <input asp-for="PurchaseDate" type="date" class="form-control" />
+                                            </div>
+                                            <span asp-validation-for="PurchaseDate" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="ExpiryDate" class="control-label font-weight-bold">Expiry Date <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-calendar-times"></i></span>
+                                                </div>
+                                                <input asp-for="ExpiryDate" type="date" class="form-control" />
+                                            </div>
+                                            <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+                                            <small class="form-text text-muted">Must be after the purchase date</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="Price" class="control-label font-weight-bold">Price ($)</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                                </div>
+                                                <input asp-for="Price" type="number" class="form-control" placeholder="0" min="0" step="0.01" />
+                                            </div>
+                                            <span asp-validation-for="Price" class="text-danger"></span>
+                                            <small class="form-text text-muted">Enter the purchase price or renewal cost</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label font-weight-bold">Domain Status</label>
+                                            <div class="form-check mt-2">
+                                                <input asp-for="IsActive" class="form-check-input" type="checkbox" checked />
+                                                <label asp-for="IsActive" class="form-check-label">
+                                                    Active Domain
+                                                </label>
+                                            </div>
+                                            <small class="form-text text-muted">Uncheck if this domain is currently inactive</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="my-4">
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-save"></i> Save Domain
+                                    </button>
+                                    <a asp-action="Index" class="btn btn-secondary btn-lg ml-2">
+                                        <i class="fas fa-times"></i> Cancel
+                                    </a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side Panel with Tips -->
+                <div class="col-lg-4">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-info">Domain Registration Tips</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <h6 class="font-weight-bold text-primary">
+                                    <i class="fas fa-lightbulb text-warning"></i> Best Practices
+                                </h6>
+                                <ul class="list-unstyled small">
+                                    <li class="mb-2"><i class="fas fa-check text-success"></i> Use clear, memorable domain names</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success"></i> Set expiry reminders 30-60 days in advance</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success"></i> Keep contact information updated</li>
+                                    <li class="mb-2"><i class="fas fa-check text-success"></i> Enable auto-renewal when possible</li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-3">
+                                <h6 class="font-weight-bold text-primary">
+                                    <i class="fas fa-info-circle text-info"></i> Common TLDs
+                                </h6>
+                                <div class="row small">
+                                    <div class="col-6">
+                                        <span class="badge badge-light mb-1">.com</span><br>
+                                        <span class="badge badge-light mb-1">.org</span><br>
+                                        <span class="badge badge-light mb-1">.net</span><br>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="badge badge-light mb-1">.info</span><br>
+                                        <span class="badge badge-light mb-1">.biz</span><br>
+                                        <span class="badge badge-light mb-1">.co</span><br>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-warning small mb-0">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <strong>Important:</strong> Double-check all dates and ensure the domain name is spelled correctly before saving.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="card shadow">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-success">Quick Actions</h6>
+                        </div>
+                        <div class="card-body">
+                            <a asp-action="Index" class="btn btn-outline-primary btn-sm btn-block mb-2">
+                                <i class="fas fa-list"></i> View All Domains
+                            </a>
+                            <a asp-action="ExpiringSoon" class="btn btn-outline-warning btn-sm btn-block mb-2">
+                                <i class="fas fa-exclamation-triangle"></i> Expiring Soon
+                            </a>
+                            <a asp-controller="Companies" asp-action="Index" class="btn btn-outline-info btn-sm btn-block">
+                                <i class="fas fa-building"></i> Manage Companies
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- End of Main Content -->
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2025</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+</div>
+
+<script>
+    $(document).ready(function() {
+        // Set default purchase date to today
+        if ($('#PurchaseDate').val() === '') {
+            var today = new Date().toISOString().split('T')[0];
+            $('#PurchaseDate').val(today);
+        }
+
+        // Auto-calculate expiry date (1 year from purchase) when purchase date changes
+        $('#PurchaseDate').change(function() {
+            var purchaseDate = new Date($(this).val());
+            if (purchaseDate && $('#ExpiryDate').val() === '') {
+                var expiryDate = new Date(purchaseDate);
+                expiryDate.setFullYear(expiryDate.getFullYear() + 1);
+                $('#ExpiryDate').val(expiryDate.toISOString().split('T')[0]);
+            }
+        });
+
+        // Format domain name input (lowercase)
+        $('#DomainName').on('blur', function() {
+            $(this).val($(this).val().toLowerCase().trim());
+        });
+
+        // Auto-hide alerts after 5 seconds
+        setTimeout(function() {
+            $('.alert').fadeOut('slow');
+        }, 5000);
+
+        // Form validation enhancement
+        $('form').on('submit', function(e) {
+            var domainName = $('#DomainName').val().trim();
+            var purchaseDate = new Date($('#PurchaseDate').val());
+            var expiryDate = new Date($('#ExpiryDate').val());
+
+            // Basic domain name validation
+            if (domainName && !domainName.includes('.')) {
+                alert('Please enter a valid domain name with an extension (e.g., example.com)');
+                e.preventDefault();
+                return false;
+            }
+
+            // Date validation
+            if (purchaseDate >= expiryDate) {
+                alert('Expiry date must be after the purchase date.');
+                e.preventDefault();
+                return false;
+            }
+        });
+    });
+</script>
