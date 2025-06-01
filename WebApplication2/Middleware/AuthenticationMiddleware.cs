@@ -11,7 +11,6 @@
     {
         var path = context.Request.Path.Value?.ToLower() ?? "";
 
-        // Only allow these specific paths without authentication
         var allowedPaths = new[]
         {
             "/login",
@@ -19,12 +18,12 @@
             "/js/",
             "/images/",
             "/lib/",
-            "/favicon.ico"
+            "/favicon.ico",
+            "/hosting"
         };
 
         // Check if the current path is allowed
         bool isAllowedPath = allowedPaths.Any(allowedPath => path.StartsWith(allowedPath));
-
         if (isAllowedPath)
         {
             await _next(context);

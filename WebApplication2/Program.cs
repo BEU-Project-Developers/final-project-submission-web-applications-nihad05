@@ -35,14 +35,11 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
 
-app.UseAuthorization();
-
+// CORRECT ORDER: Authentication BEFORE Authorization
 app.UseAuthentication();
-
-app.UseMiddleware<AuthenticationMiddleware>();
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
