@@ -14,11 +14,9 @@ namespace WebApplication2.Models
 
         public int BandwidthGB { get; set; }
 
-        [DataType(DataType.Currency)]
-        public decimal Price { get; set; }
+        public int Price { get; set; }
 
-        [StringLength(20)]
-        public string Status { get; set; } = "Active";
+        public int Status { get; set; }
 
         public string? Description { get; set; }
         // Foreign key

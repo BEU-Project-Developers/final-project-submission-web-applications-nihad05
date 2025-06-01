@@ -5,6 +5,7 @@ using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
 {
+    [Route("Hosting")]
     public class HostingController : Controller
     {
         private readonly AppDbContext _context;
@@ -13,31 +14,27 @@ namespace WebApplication2.Controllers
         {
             _context = context;
         }
+
         public IActionResult Index()
         {
             return View();
         }
 
-
-        // GET: HostingPackages
-        public async Task<IActionResult> Index2()
+        [Route("Packages")]
+        public async Task<IActionResult> Packages()
         {
+            return Json("here");
             var hostingPackages = await _context.HostingPackages
-              .Include(h => h.Company)
+                .Include(h => h.Company)
                 .OrderBy(h => h.Price)
                 .ToListAsync();
 
-            return View("~/Views/Admin/Hosting/Index.cshtml", hostingPackages);
+            return View("~/Views/Admin/Hosting.cshtml", hostingPackages);
         }
 
-        // GET: HostingPackages/Details/5
-        public async Task<IActionResult> Details(int? id)
+        [Route("Details/{id}")]
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var hostingPackage = await _context.HostingPackages
                 .Include(h => h.Company)
                 .FirstOrDefaultAsync(m => m.Id == id);
@@ -47,20 +44,20 @@ namespace WebApplication2.Controllers
                 return NotFound();
             }
 
-            return View(hostingPackage);
+            return View("~/Views/Admin/HostingDetails.cshtml", hostingPackage);
         }
 
-        // GET: HostingPackages/Create
+        [Route("Create")]
         public IActionResult Create()
         {
-            ViewBag.Companies = new SelectList(_context.Companies, "Id", "Name");
-            return View();
+            ViewBag.Companies = _context.Companies.Where(c => c.DeletedAt == null).ToList();
+            return View("~/Views/Admin/AdminHosting/Create.cshtml");
         }
 
-        // POST: HostingPackages/Create
         [HttpPost]
+        [Route("Create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,StorageGB,BandwidthGB,Price,Status,Description,Company")] HostingPackage hostingPackage)
+        public async Task<IActionResult> Create([Bind("Name,StorageGB,BandwidthGB,Price,Status,Description,CompanyId")] HostingPackage hostingPackage)
         {
             if (ModelState.IsValid)
             {
@@ -69,48 +66,55 @@ namespace WebApplication2.Controllers
                 await _context.SaveChangesAsync();
 
                 TempData["Success"] = "Hosting package created successfully!";
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Packages");
             }
 
-            ViewBag.Companies = new SelectList(_context.Companies, "Id", "Name", hostingPackage.Company);
-            return View(hostingPackage);
+            ViewBag.Companies = _context.Companies.Where(c => c.DeletedAt == null).ToList();
+            return View("~/Views/Admin/AdminHosting/Create.cshtml", hostingPackage);
         }
 
-        // GET: HostingPackages/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        [Route("Edit/{id}")]
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var hostingPackage = await _context.HostingPackages.FindAsync(id);
             if (hostingPackage == null)
             {
                 return NotFound();
             }
 
-            ViewBag.Companies = new SelectList(_context.Companies, "Id", "Name", hostingPackage.Company);
-            return View(hostingPackage);
+            ViewBag.Companies = _context.Companies.Where(c => c.DeletedAt == null).ToList();
+            return View("~/Views/Admin/AdminHosting/Edit.cshtml", hostingPackage);
         }
 
-        // POST: HostingPackages/Edit/5
         [HttpPost]
+        [Route("Edit/{id}")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,StorageGB,BandwidthGB,Price,Status,Description,Company,CreatedAt")] HostingPackage hostingPackage)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,StorageGB,BandwidthGB,Price,Status,Description,CompanyId,CreatedAt")] HostingPackage hostingPackage)
         {
             if (id != hostingPackage.Id)
             {
-                return NotFound();
+                return BadRequest();
             }
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(hostingPackage);
-                    await _context.SaveChangesAsync();
+                    var existingPackage = await _context.HostingPackages.FindAsync(id);
+                    if (existingPackage == null)
+                    {
+                        return NotFound();
+                    }
 
+                    existingPackage.Name = hostingPackage.Name;
+                    existingPackage.StorageGB = hostingPackage.StorageGB;
+                    existingPackage.BandwidthGB = hostingPackage.BandwidthGB;
+                    existingPackage.Price = hostingPackage.Price;
+                    existingPackage.Status = hostingPackage.Status;
+                    existingPackage.Description = hostingPackage.Description;
+                    existingPackage.CompanyId = hostingPackage.CompanyId;
+
+                    await _context.SaveChangesAsync();
                     TempData["Success"] = "Hosting package updated successfully!";
                 }
                 catch (DbUpdateConcurrencyException)
@@ -124,21 +128,16 @@ namespace WebApplication2.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Packages");
             }
 
-            ViewBag.Companies = new SelectList(_context.Companies, "Id", "Name", hostingPackage.Company);
-            return View(hostingPackage);
+            ViewBag.Companies = _context.Companies.Where(c => c.DeletedAt == null).ToList();
+            return View("~/Views/Admin/AdminHosting/Edit.cshtml", hostingPackage);
         }
 
-        // GET: HostingPackages/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        [Route("Delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             var hostingPackage = await _context.HostingPackages
                 .Include(h => h.Company)
                 .FirstOrDefaultAsync(m => m.Id == id);
@@ -148,24 +147,24 @@ namespace WebApplication2.Controllers
                 return NotFound();
             }
 
-            return View(hostingPackage);
+            return View("~/Views/Admin/AdminHosting/Delete.cshtml", hostingPackage);
         }
 
-        // POST: HostingPackages/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
+        [Route("Delete/{id}")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var hostingPackage = await _context.HostingPackages.FindAsync(id);
             if (hostingPackage != null)
             {
-                _context.HostingPackages.Remove(hostingPackage);
+                // Soft delete by setting Status to false instead of hard delete
                 await _context.SaveChangesAsync();
 
                 TempData["Success"] = "Hosting package deleted successfully!";
             }
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Packages");
         }
 
         private bool HostingPackageExists(int id)
