@@ -61,6 +61,7 @@ namespace WebApplication2.Controllers
                             new Claim(ClaimTypes.Name, user.FullName),
                             new Claim(ClaimTypes.Email, user.Email),
                             new Claim("UserId", user.Id.ToString()),
+                            new Claim("Role", user.Role.ToString()), // This is the important lin
                             new Claim("CompanyName", user.Company?.Name ?? "No Company"),
                             new Claim("CompanyId", user.CompanyId.ToString())
                         };

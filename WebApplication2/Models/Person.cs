@@ -20,7 +20,7 @@ namespace WebApplication2.Models
         public bool IsActive { get; set; } = true;
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-
+        public int Role { get; set; }
         // Foreign key
         public int CompanyId { get; set; }
         public Company Company { get; set; }

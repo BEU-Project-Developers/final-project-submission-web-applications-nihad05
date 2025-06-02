@@ -247,20 +247,20 @@
         </div>
         <!-- end loader -->
         <!-- header -->
-        <div class="header" style="background: #2e3192;">
-            <div class="container">
-                <div class="row d_flex">
-                    <div class=" col-md-2 col-sm-3 col logo_section">
-                        <div class="full">
-                            <div class="center-desk">
-                                <div class="logo">
-                                    <a href="index.html"><img src="images/logo.png" alt="#" /></a>
-                                </div>
+    <div class="header" style="background: #2e3192;">
+        <div class="container">
+            <div class="row d_flex">
+                <div class=" col-md-2 col-sm-3 col logo_section">
+                    <div class="full">
+                        <div class="center-desk">
+                            <div class="logo">
+                                <a href="index.html"><img src="images/logo.png" alt="#" /></a>
                             </div>
                         </div>
                     </div>
-                    @inject Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> HtmlHelper
-                    <div class="col-md-8 col-sm-12">
+                </div>
+                @inject Microsoft.AspNetCore.Mvc.Rendering.IHtmlHelper<dynamic> HtmlHelper
+                <div class="col-md-8 col-sm-12">
                     <nav class="navigation navbar navbar-expand-md navbar-dark">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -285,7 +285,7 @@
                             </ul>
                         </div>
                     </nav>
-                    </div>
+                </div>
                 <div class="col-md-2 d_none">
                     <ul class="email text_align_right">
                         <li>
@@ -305,6 +305,19 @@
                                         <i class="fa fa-chevron-down dropdown-arrow"></i>
                                     </a>
                                     <div class="user-dropdown-menu">
+                                        @{
+                                            var userRole = User.FindFirst("Role")?.Value;
+                                            bool isAdmin = userRole == "1";
+                                        }
+                                        @if (userRole == "1")
+                                        {
+                                            <a asp-controller="Admin" asp-action="Index" class="dropdown-item">
+                                                <i class="fa fa-cogs" style="margin-right: 8px;"></i>
+                                                Admin Panel
+                                            </a>
+                                            <div class="dropdown-divider"></div>
+                                        }
+
                                         <a href="#" class="dropdown-item">
                                             <i class="fa fa-user" style="margin-right: 8px;"></i>
                                             Profile
@@ -334,9 +347,9 @@
                     </ul>
                 </div>
 
-                </div>
             </div>
         </div>
+    </div>
                 @RenderBody()
         <footer>
             <div class="footer">
